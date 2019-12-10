@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest --verbose test/*"
+    "test": "clear; jest --verbose test/*"
   },
   "repository": {
     "type": "git",
