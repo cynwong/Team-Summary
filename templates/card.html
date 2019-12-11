@@ -1,0 +1,37 @@
+
+<div class="card">
+    <div class="card-header">
+        <h1><%= employee.name %></h1>
+        <h2>
+            <% if (employee.role.toLowerCase() === "manager") { %>
+                <i class="fas fa-mug-hot"></i> Manager
+            <% } %>
+
+            <% if (employee.role.toLowerCase() === "engineer") { %>
+                <i class="fas fa-glasses"></i> Engineer
+            <% } %>
+
+            <% if (employee.role.toLowerCase() === "intern") { %>
+                <i class="fas fa-user-graduate"></i> Intern
+            <% } %>
+        </h2>
+    </div>
+    <div class="card-body">
+        <ul>
+            <li>ID: <%= employee.id %></li>
+            <li>Email: <a href="mailto:<%= employee.email %>"><%= employee.email %></a></li>
+            <% if (employee.role.toLowerCase() === "manager") { %>
+                <li>Office number: <%= employee.officeNumber %></li>
+            <% } %>
+
+            <% if (employee.role.toLowerCase() === "engineer") { %>
+                <li>Github: <a href="https://api.github.com/users/<%= employee.github %>"><%= employee.github %></a></li>
+            <% } %>
+
+            <% if (employee.role.toLowerCase() === "intern") { %>
+                <li>School: <%= employee.school %></li>
+            <% } %>
+            
+        </ul>
+    </div>
+</div>

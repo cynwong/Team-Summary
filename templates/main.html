@@ -15,75 +15,9 @@
         <h1>My Team</h1>
     </header>
     <main>
-        <div class="card">
-            <div class="card-header">
-                <h1>Jared</h1>
-                <h2><i class="fas fa-mug-hot"></i> Manager</h2>
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li>ID: 1</li>
-                    <li>Email: <a href="mailto:jared@fakemail.com">jared@fakemail.com</a></li>
-                    <li>Office number: 1</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h1>Jared</h1>
-                <h2><i class="fas fa-glasses"></i> Manager</h2>
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li>ID: 1</li>
-                    <li>Email: <a href="mailto:jared@fakemail.com">jared@fakemail.com</a></li>
-                    <li>Office number: 1</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h1>Jared</h1>
-                <h2><i class="fas fa-glasses"></i> Manager</h2>
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li>ID: 1</li>
-                    <li>Email: <a href="mailto:jared@fakemail.com">jared@fakemail.com</a></li>
-                    <li>Office number: 1</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h1>Jared</h1>
-                <h2><i class="fas fa-glasses"></i> Manager</h2>
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li>ID: 1</li>
-                    <li>Email: <a href="mailto:jared@fakemail.com">jared@fakemail.com</a></li>
-                    <li>GitHub: <a href="http://https://api.github.com/users/username">Jared</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h1>Jared</h1>
-                <h2><i class="fas fa-user-graduate"></i> Manager</h2>
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li>ID: 1</li>
-                    <li>Email: <a href="mailto:jared@fakemail.com">jared@fakemail.com</a></li>
-                    <li>Office number: 1</li>
-                </ul>
-            </div>
-        </div>
+        <% employees.forEach(function(employee){ %>
+            <%- include('template/card', {employee}); %>
+        <% }); %>
     </main>
 </body>
 </html>
