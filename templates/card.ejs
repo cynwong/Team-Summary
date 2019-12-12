@@ -1,35 +1,35 @@
 
 <div class="card">
     <div class="card-header">
-        <h1><%= employee.name %></h1>
+        <h1><%= member.name %></h1>
         <h2>
-            <% if (employee.getRole().toLowerCase() === "manager") { %>
+            <% if (member.getRole().toLowerCase() === "manager") { %>
                 <i class="fas fa-mug-hot"></i> Manager
             <% } %>
 
-            <% if (employee.getRole().toLowerCase() === "engineer") { %>
+            <% if (member.getRole().toLowerCase() === "engineer") { %>
                 <i class="fas fa-glasses"></i> Engineer
             <% } %>
 
-            <% if (employee.getRole().toLowerCase() === "intern") { %>
+            <% if (member.getRole().toLowerCase() === "intern") { %>
                 <i class="fas fa-user-graduate"></i> Intern
             <% } %>
         </h2>
     </div>
     <div class="card-body">
         <ul>
-            <li>ID: <%= employee.id %></li>
-            <li>Email: <a href="mailto:<%= employee.email %>"><%= employee.email %></a></li>
-            <% if (employee.getRole().toLowerCase() === "manager") { %>
-                <li>Office number: <%= employee.officeNumber %></li>
+            <li>ID: <%= member.id %></li>
+            <li>Email: <a href="mailto:<%= member.email %>"><%= member.email %></a></li>
+            <% if (member.getRole().toLowerCase() === "manager") { %>
+                <li>Office number: <%= member.officeNumber %></li>
             <% } %>
 
-            <% if (employee.getRole().toLowerCase() === "engineer") { %>
-                <li>Github: <a href="https://api.github.com/users/<%= employee.github %>"><%= employee.github %></a></li>
+            <% if (member.getRole().toLowerCase() === "engineer") { %>
+                <li>Github: <a href="https://api.github.com/users/<%= member.github %>"><%= member.github %></a></li>
             <% } %>
 
-            <% if (employee.getRole().toLowerCase() === "intern") { %>
-                <li>School: <%= employee.school %></li>
+            <% if (member.getRole().toLowerCase() === "intern") { %>
+                <li>School: <%= member.school %></li>
             <% } %>
             
         </ul>

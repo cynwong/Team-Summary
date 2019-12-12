@@ -15,8 +15,8 @@
         <h1>My Team</h1>
     </header>
     <main>
-        <% employees.forEach(function(employee){ %>
-            <%- include('card', {employee}); %>
+        <% team.forEach(function(member){ %>
+            <%- include('card', {member}); %>
         <% }); %>
     </main>
 </body>
