@@ -1,5 +1,7 @@
 # Team Profile Generator / Employee Summary
 
+![Team Profile Generator](./image/team_summary.gif)
+
 ## Description
 
 Team profile generator is a command line application which generates a HTML page with the development team's information summary. 
