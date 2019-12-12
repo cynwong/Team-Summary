@@ -23,26 +23,40 @@ const getFilename = (username)=>{
 
 const createRoster = async (user)=>{
     try{
-        //add separator in console
-        console.log("-".repeat(80));
+
+        //create the team array with the manager
+        const team = [user];
+
+        // get destination file path
         const filename = getFilename(user.name);
         const filePath = path.join(OUTPUT_FOLDER, filename);
-        //ask user to select the team members.
-        const {members:names} = await inquirer.prompt([
-            {
-                name:"members",
-                message: "Select the team members",
-                choices: members.filter(({name,available})=> {
-                    if(available){
-                        return name;
-                    }
-                }),
-                type: "checkbox"
-            }
-        ]);
-        // create a empty array for this team
-        const team = [];
 
+        //ask user to select the team members.
+        const getMemberNamesFromUser = async ()=>{
+            //add separator in console
+            console.log("-".repeat(80));
+            const {teamMembers} = await inquirer.prompt([
+                {
+                    name:"teamMembers",
+                    message: "Select the team members",
+                    choices: members.filter(({name,available})=> {
+                        if(available){
+                            return name;
+                        }
+                    }),
+                    type: "checkbox"
+                }
+            ]);
+            let names = teamMembers; 
+            if(names.length === 0){
+                console.log("\n*** No staff member is selected. At least one member must be selected.\n");
+                name = await getMemberNamesFromUser();
+            }
+            return names; 
+        };
+        
+        const names = await getMemberNamesFromUser();
+        
         members.forEach((member)=>{
             //check if a engineer or an intern is selected
             if(names.indexOf(member.name) !== -1){
@@ -52,8 +66,7 @@ const createRoster = async (user)=>{
                 team.push(member);
             }
         });
-        //add manager to the team
-        team.push(user);
+        
         //render team info to html by using template. 
         const html = await ejs.renderFile("templates/main.ejs", 
             {
