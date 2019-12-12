@@ -1,6 +1,6 @@
 # Team Profile Generator / Employee Summary
 
-<img src="./image/team_summary.gif" alt="Team Profile Generator Photo" style="width:100vw;">
+![Team Profile Generator Photo](./image/team_summary.gif)
 
 ## Description
 
