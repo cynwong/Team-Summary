@@ -9,6 +9,9 @@ const Manager = require("./lib/manager");
 const managers = EMPLOYEES.filter((employee)=> employee instanceof Manager);
 let members = EMPLOYEES.filter((employee)=> !(employee instanceof Manager));
 
+/**
+ * Start the program by asking for the user's name
+ */
 const start = async () => {
     try{
             // get the current user(manager)'s name from the managers objects
@@ -50,4 +53,5 @@ const start = async () => {
     }
 };
 
+// run the start function on load. 
 start();
