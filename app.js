@@ -2,6 +2,16 @@ const inquirer = require("inquirer");
 
 const createRoster = require("./lib/process");
 
+const {lang} = require("./config");
+const {
+    main: {
+        usernameQuestion,
+        allStaffAssignedMessage,
+        addMoreRosterQuestion,
+        errMessagePrefix
+    } 
+}= require(`./lang/${lang}`);
+
 const EMPLOYEES = require("./lib/access_data");
 const Manager = require("./lib/manager");
 
@@ -18,7 +28,7 @@ const start = async () => {
             const {user:username} = await inquirer.prompt([
                 {
                     name: "user",
-                    message: "Who are you?",
+                    message: usernameQuestion,
                     choices: managers.map(({name})=>name),
                     type: "list"
                 }
@@ -34,14 +44,14 @@ const start = async () => {
             //check if all staff members have been assigned to a team.
             if(members.every(({available})=>!available)){
                 // if yes, then cannot create more roster so exit the program. 
-                console.log("All staff are assigned to a team. Exiting the program...")
+                console.log(allStaffAssignedMessage);
                 process.exit();
             }
             //ask user if they want to create more team roster
             const { addMore } = await inquirer.prompt([
                 {
                     name: "addMore",
-                    message: "Do you want to create more roster?",
+                    message: addMoreRosterQuestion,
                     type:"confirm"
                 }
             ]);
@@ -49,7 +59,7 @@ const start = async () => {
             
         }while(moreRoster);
     }catch(err){
-        console.log("Error:", err.message)
+        console.log(errMessagePrefix, err.message)
     }
 };
 
