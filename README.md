@@ -4,11 +4,11 @@
 
 ## Description
 
-Team profile generator is a command line application which generates a HTML page with the development team's information summary. 
+Team profile generator is a command-line application that generates an HTML page with the development team's information summary. 
 
 ## User story
 
-> As a manager
+> As a manager,
 > I want to generate a webpage that displays my team's basic info
 > so that I have quick access to emails and GitHub profiles
 
@@ -39,11 +39,11 @@ Team profile generator is a command line application which generates a HTML page
     4. Select the names of the team members.
     5. Press Enter to generate the roster.
     6. Generated roster will be saved in the pre-defined folder and opened in the default browser. 
-    7. If there are staff left un-assigned, program will ask the user if they wants to create another team. 
+    7. If there are staff left un-assigned, the program will ask the user if they want to create another team. 
     8. Press 
         * "y" to create a new roster, or
         * "n" to exit the program.
 
 ## Future Development
 
-Current version uses data saved in data/employee file. This can later be implemented to retrieve employees' data from a database.
+The current version uses data saved in data/employee file. This can later be implemented to retrieve employees' data from a database.
